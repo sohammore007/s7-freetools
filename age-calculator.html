@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Use our free age calculator to instantly find out your exact age in years, months, and days. Also see your total days lived and days until your next birthday.">
+    <title>Free Age Calculator Online | Calculate Age from Date of Birth | S7 FreeTools</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Age Calculator Online | Calculate Age from Date of Birth | S7 FreeTools">
+    <meta property="og:description" content="Use our free age calculator to instantly find out your exact age in years, months, and days. Also see your total days lived and days until your next birthday.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.freetools.example.com/age-calculator">
+    <meta property="og:image" content="https://www.freetools.example.com/assets/og-age-calculator.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How does the age calculator calculate my age?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator compares your chosen date of birth against today's date. It calculates the difference in years, months, and days accounting for leap years and the varying lengths of months."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is my date of birth saved anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, your date of birth is completely private. All calculations are performed instantly using JavaScript entirely within your web browser, meaning your data never leaves your device."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do you calculate the days until my next birthday?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool determines your birthday for the current year. If that date has already passed, it calculates the number of days between today and your birthday in the following year."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What time zone is used?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses the local date and time on your device to determine \"today\", ensuring the result is accurate for your specific location."
+        }
+      }]
+    }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <link rel="canonical" href="https://s7freetools.example/age-calculator.html">
+
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://s7freetools.example/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text & Math Tools",
+        "item": "https://s7freetools.example/#tools-section"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Free Age Calculator Online",
+        "item": "https://s7freetools.example/age-calculator.html"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">S7 FreeTools</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><svg class="sun-icon" viewBox="0 0 24 24" style="display:none;"><path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M11,1L13,1V5.32L11,5.32V1M5.51,6.92L8.54,3.9L9.96,5.31L6.93,8.34L5.51,6.92M18.49,6.92L17.07,8.34L14.04,5.31L15.46,3.9L18.49,6.92M1,11H5.32V13H1V11M18.68,11H23V13H18.68V11M5.51,17.08L6.93,15.66L9.96,18.69L8.54,20.1L5.51,17.08M18.49,17.08L20.1,18.69L17.07,20.1L15.46,18.69L18.49,17.08M11,18.68L13,18.68V23L11,23V18.68Z" /></svg><svg class="moon-icon" viewBox="0 0 24 24"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.11,19.04C17.65,20.46 15.68,21.31 13.5,21.31C9.09,21.31 5.5,17.72 5.5,13.31C5.5,11.13 6.35,9.16 7.77,7.7C8.14,7.31 8.56,6.97 9.01,6.65C9.76,6.12 10.94,7.01 10.86,7.84C10.74,9.25 11.23,10.74 12.26,11.77C13.29,12.8 14.78,13.29 16.19,13.17C17.02,13.1 18.06,13.88 18.06,14.72V15.29L18.97,15.95Z" /></svg></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
+                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+                <li>&gt;</li>
+                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Text & Math Tools</a></li>
+                <li>&gt;</li>
+                <li aria-current="page" style="font-weight: 500;">Free Age Calculator Online</li>
+            </ol>
+        </nav>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Exact Age Calculator Online</h1>
+                <p>Instantly calculate your exact age in years, months, and days, plus find out how many days until your next birthday.</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container" style="max-width: 600px; margin: 2rem auto;">
+                    <div class="form-group">
+                        <label for="dobInput">Date of Birth</label>
+                        <input type="date" id="dobInput" class="input-field" required>
+                    </div>
+                    
+                    <button id="calculateBtn" class="btn btn-large" style="width: 100%; margin-bottom: 2rem;">Calculate Age</button>
+
+                    <div id="resultsSection" style="display: none;">
+                        <h3 style="text-align: center; margin-bottom: 1.5rem;">Your Age Is <button id="copyAgeBtn" class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; margin-left: 1rem;">Copy Result</button></h3>
+                        <div class="stats-grid">
+                            <div class="stat-card" style="grid-column: 1 / -1; background-color: rgba(59, 130, 246, 0.1); border-color: #bfdbfe;">
+                                <div id="exactAge" class="stat-value" style="font-size: 1.75rem;">0 Years, 0 Months, 0 Days</div>
+                                <div class="stat-label">Exact Age</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="totalDays" class="stat-value">0</div>
+                                <div class="stat-label">Total Days Lived</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="nextBirthday" class="stat-value">0</div>
+                                <div class="stat-label">Days Until Next Birthday</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><div class="ad-slot">Ad Space</div></div>
+        <section class="article-section">
+            <div class="container">
+                <h2>How to Use This Age Calculator</h2>
+                <div class="article-content">
+                    <p>Have you ever been asked for your exact age in months and days, or wondered exactly how many days you've been alive? Calculating this manually can be incredibly tedious due to leap years and the varying lengths of each calendar month. Our free online age calculator does all the heavy lifting for you instantly.</p>
+                    <p>To use the tool, simply click on the "Date of Birth" input field and select your birth date from the calendar pop-up (or type it in directly). Once you hit the "Calculate Age" button, the tool will immediately display your exact chronological age in a readable format of years, months, and days.</p>
+                    <p>But the insights don't stop there. Below your exact age, you will also discover the total number of days you have lived since you were born. Additionally, the calculator looks ahead to your upcoming birthday and tells you exactly how many days are left until you can celebrate again! Best of all, because this tool is built entirely with client-side JavaScript, all calculations are securely performed directly on your device. Your sensitive birth date information is never uploaded, tracked, or saved on our servers.</p>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>How does the age calculator calculate my age?</h3>
+                        <p>The calculator compares your chosen date of birth against today's date. It calculates the difference in years, months, and days accounting for leap years and the varying lengths of months.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my date of birth saved anywhere?</h3>
+                        <p>No, your date of birth is completely private. All calculations are performed instantly using JavaScript entirely within your web browser, meaning your data never leaves your device.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you calculate the days until my next birthday?</h3>
+                        <p>The tool determines your birthday for the current year. If that date has already passed, it calculates the number of days between today and your birthday in the following year.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What time zone is used?</h3>
+                        <p>The calculator uses the local date and time on your device to determine "today", ensuring the result is accurate for your specific location.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+                <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">Image Compressor</h3>
+                        <p class="tool-card-desc">Reduce JPG/PNG sizes instantly.</p>
+                        <a href="image-compressor.html" class="btn">Use Tool</a>
+                    </div>
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">Word Counter</h3>
+                        <p class="tool-card-desc">Count words and characters.</p>
+                        <a href="word-counter.html" class="btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container"><div class="ad-slot square" style="margin-bottom:0;">Ad Space</div></div>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+            <p class="copyright">&copy; 2026 S7 FreeTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/age-calculator.js"></script>
+</body>
+</html>

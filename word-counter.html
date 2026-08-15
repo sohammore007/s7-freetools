@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Use our free online word counter to instantly count words, characters, sentences, and paragraphs in your text. Calculate reading time and more.">
+    <title>Free Word Counter Online | Character & Sentence Count | S7 FreeTools</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Word Counter Online | Character & Sentence Count | S7 FreeTools">
+    <meta property="og:description" content="Use our free online word counter to instantly count words, characters, sentences, and paragraphs in your text. Calculate reading time and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.freetools.example.com/word-counter">
+    <meta property="og:image" content="https://www.freetools.example.com/assets/og-word-counter.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How does this word counter work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our word counter works entirely within your browser. As you type or paste your text into the box, it instantly calculates the number of words, characters, sentences, and paragraphs in real-time."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is my text saved or uploaded anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely not. Your text remains 100% private. The counting process happens locally on your device, and no data is ever sent to or stored on our servers."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How is the reading time calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The estimated reading time is based on the average adult reading speed of about 200 words per minute. It helps you gauge how long it will take an audience to read your article or essay."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does it count punctuation as words?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, punctuation marks are not counted as words. However, they are included in the 'Characters (with spaces)' and 'Characters (no spaces)' metrics depending on how they are attached to words."
+        }
+      }]
+    }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <link rel="canonical" href="https://s7freetools.example/word-counter.html">
+
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://s7freetools.example/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text & Math Tools",
+        "item": "https://s7freetools.example/#tools-section"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Free Word Counter Online",
+        "item": "https://s7freetools.example/word-counter.html"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">S7 FreeTools</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><svg class="sun-icon" viewBox="0 0 24 24" style="display:none;"><path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M11,1L13,1V5.32L11,5.32V1M5.51,6.92L8.54,3.9L9.96,5.31L6.93,8.34L5.51,6.92M18.49,6.92L17.07,8.34L14.04,5.31L15.46,3.9L18.49,6.92M1,11H5.32V13H1V11M18.68,11H23V13H18.68V11M5.51,17.08L6.93,15.66L9.96,18.69L8.54,20.1L5.51,17.08M18.49,17.08L20.1,18.69L17.07,20.1L15.46,18.69L18.49,17.08M11,18.68L13,18.68V23L11,23V18.68Z" /></svg><svg class="moon-icon" viewBox="0 0 24 24"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.11,19.04C17.65,20.46 15.68,21.31 13.5,21.31C9.09,21.31 5.5,17.72 5.5,13.31C5.5,11.13 6.35,9.16 7.77,7.7C8.14,7.31 8.56,6.97 9.01,6.65C9.76,6.12 10.94,7.01 10.86,7.84C10.74,9.25 11.23,10.74 12.26,11.77C13.29,12.8 14.78,13.29 16.19,13.17C17.02,13.1 18.06,13.88 18.06,14.72V15.29L18.97,15.95Z" /></svg></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
+                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+                <li>&gt;</li>
+                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Text & Math Tools</a></li>
+                <li>&gt;</li>
+                <li aria-current="page" style="font-weight: 500;">Free Word Counter Online</li>
+            </ol>
+        </nav>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Free Online Word & Character Counter</h1>
+                <p>Instantly count words, characters, sentences, and paragraphs in your text. 100% free and private.</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container">
+                    <div class="word-counter-workspace">
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <textarea id="textInput" class="input-field" placeholder="Type or paste your text here to begin counting..."></textarea>
+                            <div class="flex-responsive" style="justify-content: flex-end; margin-top: 1rem;">
+                                <button id="copyStatsBtn" class="btn">Copy Stats</button>
+                                <button id="clearBtn" class="btn btn-outline" style="border-color: var(--border-color); color: var(--text-color);">Clear Text</button>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div id="wordCount" class="stat-value">0</div>
+                                <div class="stat-label">Words</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="charCount" class="stat-value">0</div>
+                                <div class="stat-label">Characters (spaces)</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="charNoSpaceCount" class="stat-value">0</div>
+                                <div class="stat-label">Characters (no spaces)</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="sentenceCount" class="stat-value">0</div>
+                                <div class="stat-label">Sentences</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="paragraphCount" class="stat-value">0</div>
+                                <div class="stat-label">Paragraphs</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="readingTime" class="stat-value">0m</div>
+                                <div class="stat-label">Reading Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><div class="ad-slot">Ad Space</div></div>
+        <section class="article-section">
+            <div class="container">
+                <h2>How to Use This Word Counter</h2>
+                <div class="article-content">
+                    <p>Whether you are a student writing an essay with a strict word limit, a professional crafting a concise email, or a blogger optimizing content for SEO, knowing the exact length of your text is critical. Our free online word counter is designed to give you precise, real-time statistics about your writing without any hassle.</p>
+                    <p>To use the tool, simply type directly into the text box above, or copy and paste text from your word processor, Google Docs, or any other application. As soon as you enter your text, the tool instantly processes it and updates the statistics grid below. You don't need to click any buttons to see the results. If you want to start over, the "Clear Text" button will wipe the slate clean in a single click.</p>
+                    <p>Beyond standard word and character counts, this tool provides advanced metrics. The sentence and paragraph counts help you gauge the structure and readability of your writing—shorter sentences and paragraphs often make text easier to digest. Additionally, the reading time estimate (calculated at an average pace of 200 words per minute) gives you a realistic idea of how long it will take your audience to consume your content. Because everything runs entirely in your web browser, your text is completely secure and is never transmitted over the internet.</p>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>How does this word counter work?</h3>
+                        <p>Our word counter works entirely within your browser. As you type or paste your text into the box, it instantly calculates the number of words, characters, sentences, and paragraphs in real-time.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my text saved or uploaded anywhere?</h3>
+                        <p>Absolutely not. Your text remains 100% private. The counting process happens locally on your device, and no data is ever sent to or stored on our servers.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How is the reading time calculated?</h3>
+                        <p>The estimated reading time is based on the average adult reading speed of about 200 words per minute. It helps you gauge how long it will take an audience to read your article or essay.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does it count punctuation as words?</h3>
+                        <p>No, punctuation marks are not counted as words. However, they are included in the 'Characters (with spaces)' and 'Characters (no spaces)' metrics depending on how they are attached to words.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+                <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">Image Compressor</h3>
+                        <p class="tool-card-desc">Reduce JPG/PNG sizes instantly.</p>
+                        <a href="image-compressor.html" class="btn">Use Tool</a>
+                    </div>
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" role="img" aria-hidden="true">🎂</div>
+                        <h3 class="tool-card-title">Age Calculator</h3>
+                        <p class="tool-card-desc">Calculate exact chronological age.</p>
+                        <a href="age-calculator.html" class="btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container"><div class="ad-slot square" style="margin-bottom:0;">Ad Space</div></div>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+            <p class="copyright">&copy; 2026 S7 FreeTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/word-counter.js"></script>
+</body>
+</html>

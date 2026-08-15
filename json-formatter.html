@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online JSON Formatter and Validator. Instantly format, prettify, and minify your JSON data with error checking directly in your browser.">
+    <title>JSON Formatter Online Free | JSON Validator | S7 FreeTools</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JSON Formatter Online Free | JSON Validator | S7 FreeTools">
+    <meta property="og:description" content="Free online JSON Formatter and Validator. Instantly format, prettify, and minify your JSON data with error checking directly in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://s7freetools.example/json-formatter.html">
+    <meta property="og:image" content="https://s7freetools.example/assets/og-json-formatter.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="canonical" href="https://s7freetools.example/json-formatter.html">
+    
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://s7freetools.example/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developer Tools",
+        "item": "https://s7freetools.example/#tools-section"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "JSON Formatter Online Free",
+        "item": "https://s7freetools.example/json-formatter.html"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Is my JSON data uploaded to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, your JSON data is completely private. This tool uses pure client-side JavaScript to parse and format the data entirely within your browser."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does the JSON validator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you click Format, the tool attempts to parse your JSON. If there is a syntax error (like a missing comma or unquoted key), it catches the exact error message and displays it to you."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is JSON Minification?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minifying JSON removes all unnecessary whitespace, line breaks, and indentation, resulting in the smallest possible file size for faster network transmission."
+        }
+      }]
+    }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">S7 FreeTools</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><svg class="sun-icon" viewBox="0 0 24 24" style="display:none;"><path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M11,1L13,1V5.32L11,5.32V1M5.51,6.92L8.54,3.9L9.96,5.31L6.93,8.34L5.51,6.92M18.49,6.92L17.07,8.34L14.04,5.31L15.46,3.9L18.49,6.92M1,11H5.32V13H1V11M18.68,11H23V13H18.68V11M5.51,17.08L6.93,15.66L9.96,18.69L8.54,20.1L5.51,17.08M18.49,17.08L20.1,18.69L17.07,20.1L15.46,18.69L18.49,17.08M11,18.68L13,18.68V23L11,23V18.68Z" /></svg><svg class="moon-icon" viewBox="0 0 24 24"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.11,19.04C17.65,20.46 15.68,21.31 13.5,21.31C9.09,21.31 5.5,17.72 5.5,13.31C5.5,11.13 6.35,9.16 7.77,7.7C8.14,7.31 8.56,6.97 9.01,6.65C9.76,6.12 10.94,7.01 10.86,7.84C10.74,9.25 11.23,10.74 12.26,11.77C13.29,12.8 14.78,13.29 16.19,13.17C17.02,13.1 18.06,13.88 18.06,14.72V15.29L18.97,15.95Z" /></svg></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
+                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+                <li>&gt;</li>
+                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Developer Tools</a></li>
+                <li>&gt;</li>
+                <li aria-current="page" style="font-weight: 500;">JSON Formatter Online Free</li>
+            </ol>
+        </nav>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Free JSON Formatter Online</h1>
+                <p>Format, validate, prettify, and minify your JSON data securely in your browser.</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container" style="max-width: 900px; margin: 2rem auto;">
+                    
+                    <div class="form-group">
+                        <label for="jsonInput">Paste JSON Data</label>
+                        <textarea id="jsonInput" class="input-field" rows="12" placeholder='{"example": "paste your unformatted JSON here..."}' style="font-family: monospace;"></textarea>
+                    </div>
+                    
+                    <div style="display:flex; gap: 1rem; margin-bottom: 2rem;">
+                        <button id="formatBtn" class="btn btn-large" style="flex:1;">Format JSON</button>
+                        <button id="minifyBtn" class="btn btn-outline" style="flex:1;">Minify JSON</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jsonOutput">Result</label>
+                        <div style="position:relative;">
+                            <textarea id="jsonOutput" class="input-field" rows="12" style="font-family: monospace; background-color: var(--panel-bg);" readonly></textarea>
+                            <button id="copyBtn" class="btn btn-outline" style="position:absolute; top: 10px; right: 20px; padding: 0.25rem 0.75rem; font-size: 0.8rem;">Copy</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><div class="ad-slot">Ad Space</div></div>
+        
+        <section class="article-section">
+            <div class="container">
+                <h2>How to Format and Validate JSON</h2>
+                <div class="article-content">
+                    <p>JSON (JavaScript Object Notation) is the standard data-interchange format for APIs and web services. However, raw JSON sent from a server is usually minified—squashed into a single line to save bandwidth. While this is great for computers, it makes it incredibly difficult for developers to read, debug, or edit.</p>
+                    <p>Our free online JSON Formatter solves this by instantly parsing your raw JSON string and outputting it with clean, readable indentation. Simply paste your data into the input box and click "Format JSON". It will apply standard 2-space indentation to make nested arrays and objects perfectly legible.</p>
+                    <p>Additionally, this tool acts as a strict <strong>JSON Validator</strong>. If you are missing a comma, forgot to quote a key (a common mistake), or have trailing commas, the native parser will instantly catch the syntax error. We intercept that error and display exactly why your JSON is invalid, allowing you to quickly spot and fix the bug.</p>
+                    <p>Best of all, this tool runs entirely locally in your browser. We never upload your payloads to a server, ensuring your sensitive configuration files, API responses, or proprietary data remain strictly private and secure.</p>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Is my JSON data uploaded to a server?</h3>
+                        <p>No, your JSON data is completely private. This tool uses pure client-side JavaScript to parse and format the data entirely within your browser.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does the JSON validator work?</h3>
+                        <p>When you click Format, the tool attempts to parse your JSON. If there is a syntax error (like a missing comma or unquoted key), it catches the exact error message and displays it to you.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is JSON Minification?</h3>
+                        <p>Minifying JSON removes all unnecessary whitespace, line breaks, and indentation, resulting in the smallest possible file size for faster network transmission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+                <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-4 4h8v8h-8v-8zm2 2v-2h-2v2h2zm2 0v2h-2v-2h2zm-4 2v2h2v-2h-2zm4 2v-2h-2v2h2z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">QR Code Generator</h3>
+                        <p class="tool-card-desc">Create free, non-expiring QR codes instantly.</p>
+                        <a href="qr-code-generator.html" class="btn">Use Tool</a>
+                    </div>
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M2.5,4V5.5H21.5V4H2.5M4,11V12.5H20V11H4M5.5,18V19.5H18.5V18H5.5Z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">Text Case Converter</h3>
+                        <p class="tool-card-desc">Instantly convert text to UPPERCASE, lowercase, camelCase, etc.</p>
+                        <a href="text-case-converter.html" class="btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container"><div class="ad-slot square" style="margin-bottom:0;">Ad Space</div></div>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+            <p class="copyright">&copy; 2026 S7 FreeTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/json-formatter.js"></script>
+</body>
+</html>

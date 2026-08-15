@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online GST Calculator. Easily add or remove GST from your price. Calculates CGST and SGST splits instantly for standard 5%, 12%, 18%, and 28% slabs.">
+    <title>Free GST Calculator Online | Add or Remove GST | S7 FreeTools</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free GST Calculator Online | Add or Remove GST | S7 FreeTools">
+    <meta property="og:description" content="Free online GST Calculator. Easily add or remove GST from your price. Calculates CGST and SGST splits instantly for standard 5%, 12%, 18%, and 28% slabs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://s7freetools.example/gst-calculator.html">
+    <meta property="og:image" content="https://s7freetools.example/assets/og-gst-calculator.jpg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="canonical" href="https://s7freetools.example/gst-calculator.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do you calculate GST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To add GST: GST Amount = (Base Amount × GST Rate) / 100. To remove GST from an inclusive total: Base Amount = Total Amount / (1 + (GST Rate / 100))."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are CGST and SGST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CGST (Central Goods and Services Tax) and SGST (State Goods and Services Tax) are two components of GST applied to intra-state sales in India. They equally split the total GST rate (e.g., an 18% GST is split into 9% CGST and 9% SGST)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I calculate a custom GST rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! While the tool defaults to the standard 5%, 12%, 18%, and 28% slabs, you can select 'Custom' from the dropdown to enter any percentage rate you need."
+        }
+      }]
+    }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://s7freetools.example/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text & Math Tools",
+        "item": "https://s7freetools.example/#tools-section"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Free GST Calculator Online",
+        "item": "https://s7freetools.example/gst-calculator.html"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">S7 FreeTools</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><svg class="sun-icon" viewBox="0 0 24 24" style="display:none;"><path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M11,1L13,1V5.32L11,5.32V1M5.51,6.92L8.54,3.9L9.96,5.31L6.93,8.34L5.51,6.92M18.49,6.92L17.07,8.34L14.04,5.31L15.46,3.9L18.49,6.92M1,11H5.32V13H1V11M18.68,11H23V13H18.68V11M5.51,17.08L6.93,15.66L9.96,18.69L8.54,20.1L5.51,17.08M18.49,17.08L20.1,18.69L17.07,20.1L15.46,18.69L18.49,17.08M11,18.68L13,18.68V23L11,23V18.68Z" /></svg><svg class="moon-icon" viewBox="0 0 24 24"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.11,19.04C17.65,20.46 15.68,21.31 13.5,21.31C9.09,21.31 5.5,17.72 5.5,13.31C5.5,11.13 6.35,9.16 7.77,7.7C8.14,7.31 8.56,6.97 9.01,6.65C9.76,6.12 10.94,7.01 10.86,7.84C10.74,9.25 11.23,10.74 12.26,11.77C13.29,12.8 14.78,13.29 16.19,13.17C17.02,13.1 18.06,13.88 18.06,14.72V15.29L18.97,15.95Z" /></svg></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
+                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+                <li>&gt;</li>
+                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Text & Math Tools</a></li>
+                <li>&gt;</li>
+                <li aria-current="page" style="font-weight: 500;">Free GST Calculator Online</li>
+            </ol>
+        </nav>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Free GST Calculator</h1>
+                <p>Instantly add or remove GST from your prices. Get a clean breakdown of CGST and SGST splits for your invoices.</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container" style="max-width: 600px; margin: 2rem auto;">
+                    
+                    <div class="flex-responsive" style="margin-bottom: 1.5rem; justify-content:center;">
+                        <label style="cursor:pointer; display:flex; align-items:center; gap:0.5rem;">
+                            <input type="radio" name="gstAction" value="add" checked> Add GST (Exclusive)
+                        </label>
+                        <label style="cursor:pointer; display:flex; align-items:center; gap:0.5rem;">
+                            <input type="radio" name="gstAction" value="remove"> Remove GST (Inclusive)
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amountInput">Amount</label>
+                        <input type="number" id="amountInput" class="input-field" placeholder="e.g. 1000" min="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gstRate">GST Rate</label>
+                        <select id="gstRate" class="input-field">
+                            <option value="5">5% GST</option>
+                            <option value="12">12% GST</option>
+                            <option value="18" selected>18% GST</option>
+                            <option value="28">28% GST</option>
+                            <option value="custom">Custom Rate...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="customRateGroup" style="display:none;">
+                        <label for="customRateInput">Custom GST Rate (%)</label>
+                        <input type="number" id="customRateInput" class="input-field" placeholder="e.g. 8.5" step="0.1" min="0">
+                    </div>
+                    
+                    <button id="calculateBtn" class="btn btn-large" style="width: 100%; margin-bottom: 2rem;">Calculate</button>
+
+                    <div id="resultsSection" style="display: none;">
+                        <h3 style="text-align: center; margin-bottom: 1.5rem;">GST Breakdown <button id="copyResultBtn" class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; margin-left: 1rem;">Copy Result</button></h3>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div id="resBase" class="stat-value">0</div>
+                                <div class="stat-label">Base Amount</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="resTotal" class="stat-value" style="color: var(--primary-color);">0</div>
+                                <div class="stat-label">Total Amount</div>
+                            </div>
+                            
+                            <div class="stat-card" style="grid-column: 1 / -1; background-color: var(--panel-bg);">
+                                <div id="resGst" class="stat-value">0</div>
+                                <div class="stat-label">Total GST Amount</div>
+                                <div style="display:flex; justify-content:space-between; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                                    <div style="text-align:center; width:50%; border-right: 1px solid var(--border-color);">
+                                        <div id="resCgst" style="font-weight:bold; font-size:1.1rem;">0</div>
+                                        <div style="font-size:0.8rem; color:var(--text-color); opacity:0.8;">CGST (<span id="lblCgstRate">0</span>%)</div>
+                                    </div>
+                                    <div style="text-align:center; width:50%;">
+                                        <div id="resSgst" style="font-weight:bold; font-size:1.1rem;">0</div>
+                                        <div style="font-size:0.8rem; color:var(--text-color); opacity:0.8;">SGST (<span id="lblSgstRate">0</span>%)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><div class="ad-slot">Ad Space</div></div>
+        
+        <section class="article-section">
+            <div class="container">
+                <h2>How to Use the GST Calculator</h2>
+                <div class="article-content">
+                    <p>Generating invoices and filing taxes requires precise calculations. Our free online GST Calculator helps you instantly compute GST amounts, whether you need to add taxes to a base price or extract taxes from an inclusive final price.</p>
+                    <p>To <strong>Add GST (Exclusive)</strong>, enter your base product price, select the GST slab (such as 18%), and calculate. The tool will add the tax on top, providing you with the final total price. This is perfect for pricing catalogs or wholesale invoicing.</p>
+                    <p>To <strong>Remove GST (Inclusive)</strong>, toggle the tool mode and enter your total receipt amount. The tool will mathematically extract the GST, revealing the original base amount before taxes were applied. This is incredibly useful when processing receipts for accounting where only the grand total is known.</p>
+                    <p>Additionally, the calculator provides a clean split of the total GST into <strong>CGST (Central GST)</strong> and <strong>SGST (State GST)</strong> halves, which is required for intra-state billing and accounting in India.</p>
+                    <div style="background-color: var(--card-bg); border-left: 4px solid #f59e0b; padding: 1rem; margin-top: 1rem; border-radius: 4px;">
+                        <strong>Disclaimer:</strong> This tool is provided for general calculation and educational purposes only. Always consult a certified tax professional or accountant for official GST filing, returns, and compliance.
+                    </div>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>How do you calculate GST?</h3>
+                        <p>To add GST: GST Amount = (Base Amount × GST Rate) / 100. To remove GST from an inclusive total: Base Amount = Total Amount / (1 + (GST Rate / 100)).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What are CGST and SGST?</h3>
+                        <p>CGST (Central Goods and Services Tax) and SGST (State Goods and Services Tax) are two components of GST applied to intra-state sales in India. They equally split the total GST rate (e.g., an 18% GST is split into 9% CGST and 9% SGST).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I calculate a custom GST rate?</h3>
+                        <p>Yes! While the tool defaults to the standard 5%, 12%, 18%, and 28% slabs, you can select 'Custom' from the dropdown to enter any percentage rate you need.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+                <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">CGPA to Percentage</h3>
+                        <p class="tool-card-desc">Instantly convert CGPA to percentage using standard or custom multiplier formulas.</p>
+                        <a href="cgpa-to-percentage.html" class="btn">Use Tool</a>
+                    </div>
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.5-2h2v-2h-2v2zm-4 0h2v-2h-2v2zm-4 0h2v-2H5.5v2zm8-4h2v-2h-2v2zm-4 0h2v-2h-2v2zm-4 0h2v-2H5.5v2zM5.5 7h13v4h-13V7z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">EMI Calculator</h3>
+                        <p class="tool-card-desc">Calculate your Equated Monthly Installment for loans.</p>
+                        <a href="emi-calculator.html" class="btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container"><div class="ad-slot square" style="margin-bottom:0;">Ad Space</div></div>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+            <p class="copyright">&copy; 2026 S7 FreeTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gst-calculator.js"></script>
+</body>
+</html>

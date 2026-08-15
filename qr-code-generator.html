@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate high-quality, scannable QR codes instantly. 100% free, runs entirely offline in your browser.">
+    <title>Free QR Code Generator | No Expiry | S7 FreeTools</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free QR Code Generator | S7 FreeTools">
+    <meta property="og:description" content="Generate high-quality, scannable QR codes instantly. 100% free, runs entirely offline in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.freetools.example.com/qr-code-generator">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .qr-workspace {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .qr-workspace { flex-direction: row; }
+        }
+        .qr-input-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .qr-output-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        canvas {
+            background: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <link rel="canonical" href="https://s7freetools.example/qr-code-generator.html">
+
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://s7freetools.example/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Media & Security",
+        "item": "https://s7freetools.example/#tools-section"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Free QR Code Generator",
+        "item": "https://s7freetools.example/qr-code-generator.html"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">S7 FreeTools</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><svg class="sun-icon" viewBox="0 0 24 24" style="display:none;"><path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M11,1L13,1V5.32L11,5.32V1M5.51,6.92L8.54,3.9L9.96,5.31L6.93,8.34L5.51,6.92M18.49,6.92L17.07,8.34L14.04,5.31L15.46,3.9L18.49,6.92M1,11H5.32V13H1V11M18.68,11H23V13H18.68V11M5.51,17.08L6.93,15.66L9.96,18.69L8.54,20.1L5.51,17.08M18.49,17.08L20.1,18.69L17.07,20.1L15.46,18.69L18.49,17.08M11,18.68L13,18.68V23L11,23V18.68Z" /></svg><svg class="moon-icon" viewBox="0 0 24 24"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.11,19.04C17.65,20.46 15.68,21.31 13.5,21.31C9.09,21.31 5.5,17.72 5.5,13.31C5.5,11.13 6.35,9.16 7.77,7.7C8.14,7.31 8.56,6.97 9.01,6.65C9.76,6.12 10.94,7.01 10.86,7.84C10.74,9.25 11.23,10.74 12.26,11.77C13.29,12.8 14.78,13.29 16.19,13.17C17.02,13.1 18.06,13.88 18.06,14.72V15.29L18.97,15.95Z" /></svg></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
+                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+                <li>&gt;</li>
+                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Media & Security</a></li>
+                <li>&gt;</li>
+                <li aria-current="page" style="font-weight: 500;">Free QR Code Generator</li>
+            </ol>
+        </nav>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Free QR Code Generator Online</h1>
+                <p>Create non-expiring QR codes instantly. 100% private and generated locally.</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container qr-workspace">
+                    <div class="qr-input-panel">
+                        <div class="form-group">
+                            <label for="qrInput">Enter Text or URL</label>
+                            <textarea id="qrInput" class="input-field" rows="4" placeholder="https://example.com" autofocus></textarea>
+                        </div>
+                        <button id="generateBtn" class="btn btn-large">Generate QR Code</button>
+                    </div>
+                    <div class="qr-output-panel">
+                        <canvas id="qrCanvas" style="display:none;"></canvas>
+                        <div id="qrPlaceholder" style="text-align:center; color:var(--text-muted);">
+                            <div style="font-size:3rem; margin-bottom:1rem;">📱</div>
+                            Your QR code will appear here
+                        </div>
+                        <button id="downloadBtn" class="btn" style="display:none; width:100%;">Download PNG</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><div class="ad-slot">Ad Space</div></div>
+        <section class="article-section">
+            <div class="container">
+                <div class="article-content">
+                    <h2>How to Generate a QR Code Online</h2>
+                    <p>Welcome to our completely free, offline-capable QR code generator. QR codes (Quick Response codes) have become an essential tool for linking physical items to digital destinations. Whether you are creating a link to a restaurant menu, sharing Wi-Fi credentials, or directing users to your new website, this tool makes it incredibly easy.</p>
+                    <p>To use this tool, simply paste your target URL or any raw text into the input box and click "Generate QR Code". Your code is instantly mathematically generated using your browser's processing power. This means we never send your destination link or text to an external server—guaranteeing complete privacy and speed.</p>
+                    <p>Once your code is visible, you can safely test it by pointing your smartphone camera directly at your computer monitor. When you're ready, click "Download PNG" to save a high-quality, perfectly scannable image file to your device. Our QR codes never expire because they contain the raw data directly, rather than relying on shady redirect links.</p>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">Do these QR codes ever expire?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">No! Because this tool generates "static" QR codes that contain your exact text or URL embedded within the pixels, they will work forever. They do not rely on redirect services.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">Is my data sent to a server?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Absolutely not. Our QR generator is powered entirely by vanilla JavaScript running locally in your browser. Nothing is uploaded, keeping your data entirely private.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">Can I use this for commercial purposes?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Yes. You can download and print the generated PNG files on business cards, posters, menus, or product packaging without any licensing restrictions.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 itemprop="name">How do I test my QR code?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Simply open the default Camera app on any modern iOS or Android device and point it at the generated code on your screen. A link bubble should appear instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+                <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M19,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">Image Compressor</h3>
+                        <p class="tool-card-desc">Reduce JPG/PNG sizes instantly.</p>
+                        <a href="image-compressor.html" class="btn">Use Tool</a>
+                    </div>
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" /></svg>
+                        </div>
+                        <h3 class="tool-card-title">Word Counter</h3>
+                        <p class="tool-card-desc">Count words and characters.</p>
+                        <a href="word-counter.html" class="btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container"><div class="ad-slot square" style="margin-bottom:0;">Ad Space</div></div>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+            <p class="copyright">&copy; 2026 S7 FreeTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Include Nayuki's QR Code Library -->
+    <script src="js/qrcodegen.js"></script>
+    <script src="js/qr-code.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

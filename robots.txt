@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.freetools.example.com/sitemap.xml
+Sitemap: https://s7-freetools.pages.dev/sitemap.xml

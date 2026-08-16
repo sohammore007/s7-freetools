@@ -11,10 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://s7-freetools.pages.dev/blog/">
     
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#3b82f6">
-
+    <!-- Critical Theme Script & CSS to prevent white-flash -->
     <script>
         (function() {
             var savedTheme = localStorage.getItem('theme');
@@ -23,6 +20,15 @@
             }
         })();
     </script>
+    <style>
+        :root { --bg-color: #f8fafc; }
+        [data-theme="dark"] { --bg-color: #0b1120; }
+        body { background-color: var(--bg-color); }
+    </style>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#6366f1">
 
     <link rel="canonical" href="https://s7-freetools.pages.dev/blog/">
 

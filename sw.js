@@ -56,19 +56,40 @@ self.addEventListener('activate', event => {
 
 // Fetch Event (Stale-While-Revalidate)
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
+  // Only intercept GET requests for our own origin
+  if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
   
   event.respondWith(
     caches.match(event.request).then(cachedResponse => {
-      const fetchPromise = fetch(event.request).then(networkResponse => {
-        caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, networkResponse.clone());
-        });
+      if (cachedResponse) {
+        // Return cached response immediately, then update cache in background
+        fetch(event.request).then(networkResponse => {
+          if (networkResponse && networkResponse.ok) {
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, networkResponse);
+            });
+          }
+        }).catch(err => console.error('Background fetch failed:', err));
+        
+        return cachedResponse;
+      }
+      
+      // Not in cache: perform normal network fetch with proper error propagation
+      return fetch(event.request).then(networkResponse => {
+        if (networkResponse && networkResponse.ok) {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseToCache);
+          });
+        }
         return networkResponse;
-      }).catch(() => {
-        // Offline and not in cache, just return cached response if it exists
+      }).catch(err => {
+        // Let the browser handle the actual network failure gracefully
+        console.error('Fetch failed:', err);
+        throw err;
       });
-      return cachedResponse || fetchPromise;
     })
   );
 });

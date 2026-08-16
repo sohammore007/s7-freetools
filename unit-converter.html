@@ -12,6 +12,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://s7-freetools.pages.dev/unit-converter">
     
+    <!-- Critical Theme Script & CSS to prevent white-flash -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <style>
+        :root { --bg-color: #f8fafc; }
+        [data-theme="dark"] { --bg-color: #0b1120; }
+        body { background-color: var(--bg-color); }
+    </style>
+
     <link rel="stylesheet" href="css/style.css">
     <style>
         .converter-workspace {
@@ -39,16 +54,7 @@
         }
     </style>
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#3b82f6">
-
-    <script>
-        (function() {
-            var savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
+    <meta name="theme-color" content="#6366f1">
 
     <link rel="canonical" href="https://s7-freetools.pages.dev/unit-converter.html">
 

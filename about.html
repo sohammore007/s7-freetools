@@ -12,10 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://s7-freetools.pages.dev/about">
     
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#3b82f6">
-
+    <!-- Critical Theme Script & CSS to prevent white-flash -->
     <script>
         (function() {
             var savedTheme = localStorage.getItem('theme');
@@ -24,6 +21,15 @@
             }
         })();
     </script>
+    <style>
+        :root { --bg-color: #f8fafc; }
+        [data-theme="dark"] { --bg-color: #0b1120; }
+        body { background-color: var(--bg-color); }
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
 
     <link rel="canonical" href="https://s7-freetools.pages.dev/about.html">
     <script type="application/ld+json">
@@ -67,13 +73,16 @@
     </header>
 
     <main>
-        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
+
+            <nav aria-label="breadcrumb" class="container">
             <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
                 <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
                 <li>&gt;</li>
                 <li aria-current="page" style="font-weight: 500;">About Us</li>
             </ol>
-        </nav>
+            </nav>
+        </div>
         <section class="hero" style="padding-bottom: 2rem;">
             <div class="container">
                 <h1>About S7 FreeTools</h1>

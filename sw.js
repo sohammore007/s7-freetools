@@ -61,11 +61,17 @@ self.addEventListener('fetch', event => {
     return;
   }
   
+  // For navigation requests, we must not pass the original request directly to fetch()
+  // because the browser forces redirect: 'manual', which crashes on Cloudflare Pages Clean URLs (e.g., .html to clean redirect).
+  // Instead, we use the URL string and explicitly tell it to follow redirects.
+  const fetchRequest = event.request.mode === 'navigate' ? event.request.url : event.request;
+  const fetchOptions = event.request.mode === 'navigate' ? { redirect: 'follow' } : {};
+
   event.respondWith(
     caches.match(event.request).then(cachedResponse => {
       if (cachedResponse) {
         // Return cached response immediately, then update cache in background
-        fetch(event.request).then(networkResponse => {
+        fetch(fetchRequest, fetchOptions).then(networkResponse => {
           if (networkResponse && networkResponse.ok) {
             caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, networkResponse);
@@ -77,7 +83,7 @@ self.addEventListener('fetch', event => {
       }
       
       // Not in cache: perform normal network fetch with proper error propagation
-      return fetch(event.request).then(networkResponse => {
+      return fetch(fetchRequest, fetchOptions).then(networkResponse => {
         if (networkResponse && networkResponse.ok) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then(cache => {

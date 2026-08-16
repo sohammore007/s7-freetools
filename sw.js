@@ -1,4 +1,4 @@
-const CACHE_NAME = 'freetools-cache-v1';
+const CACHE_NAME = 'freetools-cache-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -54,24 +54,25 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// Fetch Event (Stale-While-Revalidate)
+// Fetch Event (Stale-While-Revalidate for assets only)
 self.addEventListener('fetch', event => {
   // Only intercept GET requests for our own origin
   if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) {
     return;
   }
   
-  // For navigation requests, we must not pass the original request directly to fetch()
-  // because the browser forces redirect: 'manual', which crashes on Cloudflare Pages Clean URLs (e.g., .html to clean redirect).
-  // Instead, we use the URL string and explicitly tell it to follow redirects.
-  const fetchRequest = event.request.mode === 'navigate' ? event.request.url : event.request;
-  const fetchOptions = event.request.mode === 'navigate' ? { redirect: 'follow' } : {};
+  // CRITICAL FIX: Never intercept page navigations. 
+  // Let the browser handle navigations and redirects completely natively.
+  // Returning without calling event.respondWith() guarantees zero SW interference.
+  if (event.request.mode === 'navigate') {
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then(cachedResponse => {
       if (cachedResponse) {
         // Return cached response immediately, then update cache in background
-        fetch(fetchRequest, fetchOptions).then(networkResponse => {
+        fetch(event.request).then(networkResponse => {
           if (networkResponse && networkResponse.ok) {
             caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, networkResponse);
@@ -83,7 +84,7 @@ self.addEventListener('fetch', event => {
       }
       
       // Not in cache: perform normal network fetch with proper error propagation
-      return fetch(fetchRequest, fetchOptions).then(networkResponse => {
+      return fetch(event.request).then(networkResponse => {
         if (networkResponse && networkResponse.ok) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then(cache => {
@@ -92,7 +93,6 @@ self.addEventListener('fetch', event => {
         }
         return networkResponse;
       }).catch(err => {
-        // Let the browser handle the actual network failure gracefully
         console.error('Fetch failed:', err);
         throw err;
       });

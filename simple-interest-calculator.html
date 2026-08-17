@@ -54,6 +54,7 @@
     }
     </script>
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
     <meta name="theme-color" content="#6366f1">
 
     <script type="application/ld+json">
@@ -115,6 +116,12 @@
             <div class="container">
                 <h1>Simple Interest Calculator</h1>
                 <p>Instantly calculate the simple interest and total amount for loans or investments.</p>
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <button onclick="shareTool()" class="btn btn-outline" aria-label="Share this tool">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                        Share
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -152,7 +159,11 @@
                     <button id="calculateBtn" class="btn btn-large" style="width: 100%; margin-bottom: 2rem;">Calculate</button>
 
                     <div id="resultsSection" style="display: none;">
-                        <h3 style="text-align: center; margin-bottom: 1.5rem;">Result <button id="copyResultBtn" class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; margin-left: 1rem;">Copy Result</button></h3>
+                        <h3 style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">Result 
+                            <button id="copyResultBtn" class="icon-btn" aria-label="Copy Result" title="Copy Result">
+                                <svg viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg>
+                            </button>
+                        </h3>
                         
                         <div class="stats-grid">
                             <div class="stat-card">

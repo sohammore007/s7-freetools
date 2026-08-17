@@ -74,14 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const toolName = pageTitle.textContent;
         // Only track explicit tool pages
         const validTools = [
-            '/image-compressor.html', '/qr-code-generator.html', '/password-generator.html', 
-            '/word-counter.html', '/unit-converter.html', '/age-calculator.html', 
-            '/bmi-calculator.html', '/cgpa-to-percentage.html', '/json-formatter.html', 
-            '/text-case-converter.html', '/emi-calculator.html', '/gst-calculator.html'
+            '/image-compressor', '/qr-code-generator', '/password-generator', 
+            '/word-counter', '/unit-converter', '/age-calculator', 
+            '/bmi-calculator', '/cgpa-to-percentage', '/json-formatter', 
+            '/text-case-converter', '/emi-calculator', '/gst-calculator',
+            '/discount-calculator', '/simple-interest-calculator', 
+            '/base64-encoder-decoder', '/color-palette-generator'
         ];
         
-        // Handle case where path might not have leading slash or might include domain depending on environment, just check endsWith
-        const isTool = validTools.some(path => window.location.pathname.endsWith(path));
+        // Remove .html from current path to support both local files and live clean URLs
+        const currentPath = window.location.pathname.replace(/\.html$/, '');
+        const isTool = validTools.some(path => currentPath.endsWith(path));
         
         if (isTool) {
             let recent = JSON.parse(localStorage.getItem('recentTools') || '[]');

@@ -297,13 +297,13 @@ main { animation: fadeIn 0.4s ease forwards; }
 .footer-links a { color: var(--text-muted); font-weight: 500; }
 .footer-links a:hover { color: var(--primary-color); }
 
-/* Theme Toggle Button */
-.theme-btn {
+/* Theme Toggle & Icon Buttons */
+.theme-btn, .icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   background-color: var(--panel-bg);
   color: var(--text-color);
@@ -313,11 +313,11 @@ main { animation: fadeIn 0.4s ease forwards; }
   box-shadow: var(--shadow-sm);
   padding: 0;
 }
-.theme-btn:hover {
+.theme-btn:hover, .icon-btn:hover {
   background-color: var(--border-color);
   transform: scale(0.95);
 }
-.theme-btn svg {
+.theme-btn svg, .icon-btn svg {
   width: 20px;
   height: 20px;
   fill: currentColor;

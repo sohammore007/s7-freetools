@@ -1,4 +1,4 @@
-const CACHE_NAME = 'freetools-cache-v2';
+const CACHE_NAME = 'freetools-cache-v4';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -25,7 +25,17 @@ const ASSETS_TO_CACHE = [
   '/js/password-generator.js',
   '/js/bmi-calculator.js',
   '/blog/index.html',
-  '/blog/reduce-image-file-size.html'
+  '/blog/reduce-image-file-size.html',
+  '/blog/cgpa-to-percentage-guide.html',
+  '/blog/emi-calculation-guide.html',
+  '/discount-calculator.html',
+  '/js/discount-calculator.js',
+  '/base64-encoder-decoder.html',
+  '/js/base64-encoder-decoder.js',
+  '/simple-interest-calculator.html',
+  '/js/simple-interest-calculator.js',
+  '/color-palette-generator.html',
+  '/js/color-palette-generator.js'
 ];
 
 // Install Event

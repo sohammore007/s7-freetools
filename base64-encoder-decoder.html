@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Base64 Encoder and Decoder. Safely encode and decode strings with robust UTF-8 and emoji support entirely in your browser.">
+    <title>Base64 Encoder/Decoder Online Free | S7 FreeTools</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Base64 Encoder/Decoder Online Free | S7 FreeTools">
+    <meta property="og:description" content="Free online Base64 Encoder and Decoder. Safely encode and decode strings with robust UTF-8 and emoji support entirely in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://s7-freetools.pages.dev/base64-encoder-decoder.html">
+    <meta property="og:image" content="https://s7-freetools.pages.dev/assets/og-base64.jpg">
+    
+    <!-- Critical Theme Script & CSS to prevent white-flash -->
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <style>
+        :root { --bg-color: #f8fafc; }
+        [data-theme="dark"] { --bg-color: #0b1120; }
+        body { background-color: var(--bg-color); }
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://s7-freetools.pages.dev/base64-encoder-decoder.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is Base64 encoding used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Base64 is a binary-to-text encoding scheme used to transport data across channels that only reliably support text content. It is widely used in email via MIME, storing complex data in XML or JSON, and embedding image files directly into HTML or CSS."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does this tool support emojis and special characters?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Unlike many standard JavaScript btoa() implementations which crash on special characters, our tool uses proper UTF-8 TextEncoder and TextDecoder APIs to safely handle all Unicode characters, including emojis and international alphabets."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is my data sent to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The entire encoding and decoding process happens locally inside your browser. No data is ever uploaded to an external server."
+        }
+      }]
+    }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://s7-freetools.pages.dev/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developer Tools",
+        "item": "https://s7-freetools.pages.dev/#tools-section"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Base64 Encoder/Decoder",
+        "item": "https://s7-freetools.pages.dev/base64-encoder-decoder.html"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">S7 FreeTools</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><svg class="sun-icon" viewBox="0 0 24 24" style="display:none;"><path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M11,1L13,1V5.32L11,5.32V1M5.51,6.92L8.54,3.9L9.96,5.31L6.93,8.34L5.51,6.92M18.49,6.92L17.07,8.34L14.04,5.31L15.46,3.9L18.49,6.92M1,11H5.32V13H1V11M18.68,11H23V13H18.68V11M5.51,17.08L6.93,15.66L9.96,18.69L8.54,20.1L5.51,17.08M18.49,17.08L20.1,18.69L17.07,20.1L15.46,18.69L18.49,17.08M11,18.68L13,18.68V23L11,23V18.68Z" /></svg><svg class="moon-icon" viewBox="0 0 24 24"><path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.11,19.04C17.65,20.46 15.68,21.31 13.5,21.31C9.09,21.31 5.5,17.72 5.5,13.31C5.5,11.13 6.35,9.16 7.77,7.7C8.14,7.31 8.56,6.97 9.01,6.65C9.76,6.12 10.94,7.01 10.86,7.84C10.74,9.25 11.23,10.74 12.26,11.77C13.29,12.8 14.78,13.29 16.19,13.17C17.02,13.1 18.06,13.88 18.06,14.72V15.29L18.97,15.95Z" /></svg></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="container" style="padding-top: 2rem; padding-bottom: 0;">
+            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
+                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+                <li>&gt;</li>
+                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Developer Tools</a></li>
+                <li>&gt;</li>
+                <li aria-current="page" style="font-weight: 500;">Base64 Encoder/Decoder</li>
+            </ol>
+        </nav>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Base64 Encoder & Decoder</h1>
+                <p>Convert text to Base64 format and vice versa, with full support for UTF-8 and emojis.</p>
+            </div>
+        </section>
+
+        <section class="tool-section">
+            <div class="container">
+                <div class="tool-container">
+                    
+                    <div id="toastError" style="display:none; background-color: #ef4444; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; text-align: center; font-weight: 500;"></div>
+
+                    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch;">
+                        
+                        <div class="form-group" style="margin-bottom: 0; display: flex; flex-direction: column;">
+                            <label for="inputText" style="display:flex; justify-content:space-between; align-items:center;">
+                                Input Text
+                                <button id="clearInputBtn" class="btn" style="padding: 0.2rem 0.6rem; font-size: 0.75rem; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color);">Clear</button>
+                            </label>
+                            <textarea id="inputText" class="input-field" placeholder="Enter text or Base64 string here..." style="flex-grow: 1; min-height: 250px; font-family: monospace; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 0; display: flex; flex-direction: column;">
+                            <label for="outputText" style="display:flex; justify-content:space-between; align-items:center;">
+                                Output Result
+                                <button id="copyOutputBtn" class="btn" style="padding: 0.2rem 0.6rem; font-size: 0.75rem;">Copy</button>
+                            </label>
+                            <textarea id="outputText" class="input-field" placeholder="Result will appear here..." style="flex-grow: 1; min-height: 250px; font-family: monospace; resize: vertical; background-color: var(--bg-color);" readonly></textarea>
+                        </div>
+                    </div>
+                    
+                    <div style="display:flex; justify-content:center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                        <button id="encodeBtn" class="btn btn-large" style="flex:1; min-width:200px;">Encode to Base64</button>
+                        <button id="decodeBtn" class="btn btn-large" style="flex:1; min-width:200px; background-color: var(--panel-bg); color: var(--text-color); border: 1px solid var(--border-color);">Decode from Base64</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><div class="ad-slot">Ad Space</div></div>
+        
+        <section class="article-section">
+            <div class="container">
+                <h2>What is Base64 Encoding?</h2>
+                <div class="article-content">
+                    <p>Base64 is a group of binary-to-text encoding schemes that represent binary data in an ASCII string format. The term Base64 originates from a specific MIME content transfer encoding.</p>
+                    <p>It is designed to carry data stored in binary formats across channels that only reliably support text content. In practice, this means converting unpredictable bytes (like images, compiled code, or special characters) into a safe, readable string using an alphabet of 64 characters (A-Z, a-z, 0-9, +, and /).</p>
+                    <p><strong>Common uses for Base64:</strong></p>
+                    <ul>
+                        <li>Embedding small images directly into HTML or CSS without requiring an external image request.</li>
+                        <li>Encoding API keys or credentials in Basic Authentication headers.</li>
+                        <li>Safely passing complex strings in URLs or JSON payloads.</li>
+                        <li>Email attachments in the MIME specification.</li>
+                    </ul>
+                </div>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>What is Base64 encoding used for?</h3>
+                        <p>Base64 is a binary-to-text encoding scheme used to transport data across channels that only reliably support text content. It is widely used in email via MIME, storing complex data in XML or JSON, and embedding image files directly into HTML or CSS.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does this tool support emojis and special characters?</h3>
+                        <p>Yes. Unlike many standard JavaScript btoa() implementations which crash on special characters, our tool uses proper UTF-8 TextEncoder and TextDecoder APIs to safely handle all Unicode characters, including emojis and international alphabets.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my data sent to a server?</h3>
+                        <p>No. The entire encoding and decoding process happens locally inside your browser. No data is ever uploaded to an external server.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
+                <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M5,3H7V5H5V3M15,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V15H5V19H19V5H15V3M5,7H7V9H5V7M5,11H7V13H5V11Z"/></svg>
+                        </div>
+                        <h3 class="tool-card-title">JSON Formatter</h3>
+                        <p class="tool-card-desc">Instantly format, prettify, minify, and validate JSON data entirely locally.</p>
+                        <a href="json-formatter.html" class="btn">Use Tool</a>
+                    </div>
+                    <div class="tool-card" style="background-color: var(--bg-color);">
+                        <div class="tool-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="48" height="48"><path d="M2.5,4V5.5H21.5V4H2.5M4,11V12.5H20V11H4M5.5,18V19.5H18.5V18H5.5Z"/></svg>
+                        </div>
+                        <h3 class="tool-card-title">Text Case Converter</h3>
+                        <p class="tool-card-desc">Convert text between UPPERCASE, lowercase, camelCase, snake_case, and more.</p>
+                        <a href="text-case-converter.html" class="btn">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container"><div class="ad-slot square" style="margin-bottom:0;">Ad Space</div></div>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+            <p class="copyright">&copy; 2026 S7 FreeTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/base64-encoder-decoder.js"></script>
+</body>
+</html>

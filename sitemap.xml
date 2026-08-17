@@ -79,6 +79,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://s7-freetools.pages.dev/discount-calculator.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://s7-freetools.pages.dev/simple-interest-calculator.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://s7-freetools.pages.dev/base64-encoder-decoder.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://s7-freetools.pages.dev/color-palette-generator.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://s7-freetools.pages.dev/blog/</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -92,6 +116,12 @@
   </url>
   <url>
     <loc>https://s7-freetools.pages.dev/blog/cgpa-to-percentage-guide.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://s7-freetools.pages.dev/blog/emi-calculation-guide.html</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

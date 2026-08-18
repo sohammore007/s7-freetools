@@ -74,24 +74,23 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
-
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
-                <li>&gt;</li>
-                <li aria-current="page" style="font-weight: 500;">About Us</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
             </nav>
         </div>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>About S7 FreeTools</h1>
                 <p>Our mission is to build the fastest, most reliable, and privacy-respecting free online tools.</p>
             </div>
         </section>
 
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <div class="article-content">
                     <p>Welcome to S7 FreeTools. Our platform was born out of a simple frustration: finding high-quality online utilities often meant dealing with intrusive paywalls, mandatory account creations, or the uneasy feeling of uploading personal files to unknown servers. We decided there had to be a better way.</p>

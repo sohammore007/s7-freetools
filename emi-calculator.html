@@ -110,19 +110,18 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
-
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
-                <li>&gt;</li>
-                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Text & Math Tools</a></li>
-                <li>&gt;</li>
-                <li aria-current="page" style="font-weight: 500;">Free EMI Calculator Online</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item"><a href="/#tools-section">Text & Math Tools</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">Free EMI Calculator Online</li>
+                </ol>
             </nav>
         </div>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Loan EMI Calculator</h1>
                 <p>Calculate your Equated Monthly Installment (EMI) for home, car, or personal loans instantly.</p>
@@ -139,17 +138,17 @@
             <div class="container">
                 <div class="tool-container" style="max-width: 600px; margin: 2rem auto;">
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="loanAmount">Loan Amount</label>
                         <input type="number" id="loanAmount" class="input-field" placeholder="e.g. 500000" min="0" required>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="interestRate">Interest Rate (% per annum)</label>
                         <input type="number" id="interestRate" class="input-field" placeholder="e.g. 10.5" step="0.01" min="0" required>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="loanTenure">Loan Tenure</label>
                         <div class="flex-responsive">
                             <input type="number" id="loanTenure" class="input-field" placeholder="e.g. 5" min="1" required style="flex:1;">
@@ -166,15 +165,15 @@
                         <h3 style="text-align: center; margin-bottom: 1.5rem;">Loan Summary <button id="copyResultBtn" class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; margin-left: 1rem;">Copy Result</button></h3>
                         
                         <div class="stats-grid">
-                            <div class="stat-card" style="grid-column: 1 / -1; background-color: rgba(59, 130, 246, 0.1); border-color: #bfdbfe;">
+                            <div class="stat-card" style="grid-column: 1 / -1; background-color: rgba(59, 130, 246, 0.1); border-color: #bfdbfe; padding: var(--space-4);">
                                 <div id="monthlyEmi" class="stat-value" style="font-size: 2rem;">0</div>
                                 <div class="stat-label">Monthly EMI</div>
                             </div>
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="totalInterest" class="stat-value">0</div>
                                 <div class="stat-label">Total Interest Payable</div>
                             </div>
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="totalPayment" class="stat-value">0</div>
                                 <div class="stat-label">Total Payment (Principal + Interest)</div>
                             </div>
@@ -199,7 +198,7 @@
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
         
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <h2>How to Use the EMI Calculator</h2>
                 <div class="article-content">
@@ -229,7 +228,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

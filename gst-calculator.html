@@ -119,7 +119,7 @@
                 <li aria-current="page" style="font-weight: 500;">Free GST Calculator Online</li>
             </ol>
         </nav>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Free GST Calculator</h1>
                 <p>Instantly add or remove GST from your prices. Get a clean breakdown of CGST and SGST splits for your invoices.</p>
@@ -145,12 +145,12 @@
                         </label>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="amountInput">Amount</label>
                         <input type="number" id="amountInput" class="input-field" placeholder="e.g. 1000" min="0" required>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="gstRate">GST Rate</label>
                         <select id="gstRate" class="input-field">
                             <option value="5">5% GST</option>
@@ -172,16 +172,16 @@
                         <h3 style="text-align: center; margin-bottom: 1.5rem;">GST Breakdown <button id="copyResultBtn" class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; margin-left: 1rem;">Copy Result</button></h3>
                         
                         <div class="stats-grid">
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="resBase" class="stat-value">0</div>
                                 <div class="stat-label">Base Amount</div>
                             </div>
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="resTotal" class="stat-value" style="color: var(--primary-color);">0</div>
                                 <div class="stat-label">Total Amount</div>
                             </div>
                             
-                            <div class="stat-card" style="grid-column: 1 / -1; background-color: var(--panel-bg);">
+                            <div class="stat-card" style="grid-column: 1 / -1; background-color: var(--panel-bg); padding: var(--space-4);">
                                 <div id="resGst" class="stat-value">0</div>
                                 <div class="stat-label">Total GST Amount</div>
                                 <div style="display:flex; justify-content:space-between; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
@@ -204,7 +204,7 @@
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
         
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <h2>How to Use the GST Calculator</h2>
                 <div class="article-content">
@@ -235,7 +235,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

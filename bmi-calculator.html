@@ -175,19 +175,18 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
-
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
-                <li>&gt;</li>
-                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Text & Math Tools</a></li>
-                <li>&gt;</li>
-                <li aria-current="page" style="font-weight: 500;">BMI Calculator</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item"><a href="/#tools-section">Text & Math Tools</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">BMI Calculator</li>
+                </ol>
             </nav>
         </div>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Free BMI Calculator Online</h1>
                 <p>Calculate your Body Mass Index instantly and privately.</p>
@@ -214,11 +213,11 @@
 
                     <!-- Metric Inputs -->
                     <div id="metricInputs">
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: var(--space-4);">
                             <label for="heightCm">Height (cm)</label>
                             <input type="number" id="heightCm" class="input-field" placeholder="e.g. 175" min="50" max="300">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: var(--space-4);">
                             <label for="weightKg">Weight (kg)</label>
                             <input type="number" id="weightKg" class="input-field" placeholder="e.g. 70" min="10" max="500">
                         </div>
@@ -227,16 +226,16 @@
                     <!-- Imperial Inputs -->
                     <div id="imperialInputs" style="display: none;">
                         <div class="bmi-input-group">
-                            <div class="form-group">
+                            <div class="form-group" style="margin-bottom: var(--space-4);">
                                 <label for="heightFt">Height (ft)</label>
                                 <input type="number" id="heightFt" class="input-field" placeholder="e.g. 5" min="1" max="9">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-bottom: var(--space-4);">
                                 <label for="heightIn">Height (in)</label>
                                 <input type="number" id="heightIn" class="input-field" placeholder="e.g. 9" min="0" max="11">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: var(--space-4);">
                             <label for="weightLb">Weight (lbs)</label>
                             <input type="number" id="weightLb" class="input-field" placeholder="e.g. 150" min="20" max="1000">
                         </div>
@@ -270,7 +269,7 @@
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
         
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <div class="article-content">
                     <h2>How to Use This BMI Calculator</h2>
@@ -309,7 +308,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

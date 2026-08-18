@@ -35,7 +35,7 @@
             max-width: 800px;
             margin: 0 auto;
             background: var(--card-bg);
-            padding: 3rem;
+            padding: var(--space-mobile-lg);
             border-radius: 8px;
             box-shadow: 0 4px 6px var(--shadow-color);
             border: 1px solid var(--border-color);
@@ -115,18 +115,18 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                <li><a href="../index.html" style="color: inherit; text-decoration: none;">Home</a></li>
-                <li>&gt;</li>
-                <li><a href="index.html" style="color: inherit; text-decoration: none;">Blog</a></li>
-                <li>&gt;</li>
-                <li aria-current="page" style="font-weight: 500;">How to Calculate EMI Manually (With Formula and Real Examples)</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item"><a href="index.html">Blog</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">How to Calculate EMI Manually (With Formula and Real Examples)</li>
+                </ol>
             </nav>
         </div>
-        <div class="container" style="padding: 3rem 1rem;">
+        <div class="container" style="padding: var(--space-mobile-lg) 1rem;">
             <article class="blog-article" itemscope itemtype="http://schema.org/Article">
                 <h1 itemprop="headline">How to Calculate EMI Manually (With Formula and Real Examples)</h1>
                 

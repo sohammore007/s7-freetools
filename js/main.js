@@ -95,23 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Render Recent Tools on Homepage
+    // Tracking logic only runs once on fresh load
+});
+
+// Render Recent Tools on Homepage
+function renderRecentlyUsed() {
     const recentContainer = document.getElementById('recentToolsContainer');
     if (recentContainer) {
+        recentContainer.innerHTML = ''; // clear existing content
         const recent = JSON.parse(localStorage.getItem('recentTools') || '[]');
         if (recent.length > 0) {
-            let html = '<h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Recently Used</h2>';
-            html += '<div class="grid tools-grid">';
+            let html = '<h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">Recently Used</h2>';
+            html += '<div style="display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.5rem; scrollbar-width: none;">';
             recent.forEach(t => {
-                html += `<div class="tool-card" style="padding: 1rem;">
-                            <h3 class="tool-card-title" style="font-size: 1.1rem; margin:0;"><a href="${t.url}">${t.name}</a></h3>
-                         </div>`;
+                html += `<a href="${t.url}" style="white-space: nowrap; padding: 0.5rem 1rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--text-color); transition: all 0.2s ease; text-decoration: none;">${t.name}</a>`;
             });
             html += '</div>';
             recentContainer.innerHTML = html;
         }
     }
-});
+}
+
+document.addEventListener('DOMContentLoaded', renderRecentlyUsed);
+window.addEventListener('pageshow', renderRecentlyUsed);
 
 
 // Theme Toggle with SVG icons

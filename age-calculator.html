@@ -117,19 +117,18 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
-
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
-                <li>&gt;</li>
-                <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Text & Math Tools</a></li>
-                <li>&gt;</li>
-                <li aria-current="page" style="font-weight: 500;">Free Age Calculator Online</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item"><a href="/#tools-section">Text & Math Tools</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">Free Age Calculator Online</li>
+                </ol>
             </nav>
         </div>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Exact Age Calculator Online</h1>
                 <p>Instantly calculate your exact age in years, months, and days, plus find out how many days until your next birthday.</p>
@@ -145,7 +144,7 @@
         <section class="tool-section">
             <div class="container">
                 <div class="tool-container" style="max-width: 600px; margin: 2rem auto;">
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="dobInput">Date of Birth</label>
                         <input type="date" id="dobInput" class="input-field" required>
                     </div>
@@ -155,15 +154,15 @@
                     <div id="resultsSection" style="display: none;">
                         <h3 style="text-align: center; margin-bottom: 1.5rem;">Your Age Is <button id="copyAgeBtn" class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; margin-left: 1rem;">Copy Result</button></h3>
                         <div class="stats-grid">
-                            <div class="stat-card" style="grid-column: 1 / -1; background-color: rgba(59, 130, 246, 0.1); border-color: #bfdbfe;">
+                            <div class="stat-card" style="grid-column: 1 / -1; background-color: rgba(59, 130, 246, 0.1); border-color: #bfdbfe; padding: var(--space-4);">
                                 <div id="exactAge" class="stat-value" style="font-size: 1.75rem;">0 Years, 0 Months, 0 Days</div>
                                 <div class="stat-label">Exact Age</div>
                             </div>
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="totalDays" class="stat-value">0</div>
                                 <div class="stat-label">Total Days Lived</div>
                             </div>
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="nextBirthday" class="stat-value">0</div>
                                 <div class="stat-label">Days Until Next Birthday</div>
                             </div>
@@ -174,7 +173,7 @@
         </section>
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <h2>How to Use This Age Calculator</h2>
                 <div class="article-content">
@@ -205,7 +204,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

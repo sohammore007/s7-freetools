@@ -112,7 +112,7 @@
                 <li aria-current="page" style="font-weight: 500;">Discount Calculator</li>
             </ol>
         </nav>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Discount Calculator</h1>
                 <p>Find the final sale price instantly, or use reverse mode to figure out the discount percentage.</p>
@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="tool-container" style="max-width: 600px; margin: 2rem auto;">
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="currencySelector">Currency Symbol</label>
                         <select id="currencySelector" class="input-field">
                             <option value="">None</option>
@@ -150,7 +150,7 @@
                         </label>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="originalPrice">Original Price</label>
                         <input type="number" id="originalPrice" class="input-field" placeholder="e.g. 1000" min="0" step="0.01">
                     </div>
@@ -175,7 +175,7 @@
                         </h3>
                         
                         <div class="stats-grid">
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="resSaved" class="stat-value" style="color: #10b981;">0</div>
                                 <div class="stat-label" id="resSavedLabel">You Save</div>
                             </div>
@@ -191,7 +191,7 @@
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
         
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <h2>How to Calculate a Discount</h2>
                 <div class="article-content">
@@ -214,7 +214,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

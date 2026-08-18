@@ -112,7 +112,7 @@
                 <li aria-current="page" style="font-weight: 500;">Simple Interest Calculator</li>
             </ol>
         </nav>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Simple Interest Calculator</h1>
                 <p>Instantly calculate the simple interest and total amount for loans or investments.</p>
@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="tool-container" style="max-width: 600px; margin: 2rem auto;">
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="currencySelector">Currency Symbol</label>
                         <select id="currencySelector" class="input-field">
                             <option value="">None</option>
@@ -141,17 +141,17 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="principalInput">Principal Amount</label>
                         <input type="number" id="principalInput" class="input-field" placeholder="e.g. 10000" min="0" step="0.01">
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="rateInput">Annual Interest Rate (%)</label>
                         <input type="number" id="rateInput" class="input-field" placeholder="e.g. 5" min="0" step="0.1">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="timeInput">Time Period (Years)</label>
                         <input type="number" id="timeInput" class="input-field" placeholder="e.g. 2" min="0" step="0.1">
                     </div>
@@ -166,7 +166,7 @@
                         </h3>
                         
                         <div class="stats-grid">
-                            <div class="stat-card">
+                            <div class="stat-card" style="padding: var(--space-4);">
                                 <div id="resInterest" class="stat-value" style="color: #f59e0b;">0</div>
                                 <div class="stat-label">Total Interest</div>
                             </div>
@@ -182,7 +182,7 @@
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
         
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <h2>Simple vs Compound Interest</h2>
                 <div class="article-content">
@@ -206,7 +206,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

@@ -74,24 +74,23 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
-
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
-                <li>&gt;</li>
-                <li aria-current="page" style="font-weight: 500;">Contact Us</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
             </nav>
         </div>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Contact Us</h1>
                 <p>We'd love to hear your feedback or ideas for new tools.</p>
             </div>
         </section>
 
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <div class="article-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
                     <p>If you have any questions, feedback, feature requests, or just want to say hello, please don't hesitate to reach out. Since we don't collect personal data or run user accounts, the best way to contact us is directly via email.</p>

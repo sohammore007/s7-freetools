@@ -109,18 +109,18 @@
     </header>
 
     <main>
-        <div style="background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-bottom: 2rem;">
+        <div class="breadcrumb-wrapper">
             <nav aria-label="breadcrumb" class="container">
-                <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.8;">
-                    <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
-                    <li>&gt;</li>
-                    <li><a href="/#tools-section" style="color: inherit; text-decoration: none;">Developer Tools</a></li>
-                    <li>&gt;</li>
-                    <li aria-current="page" style="font-weight: 500;">Text Case Converter Online Free</li>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item"><a href="/#tools-section">Developer Tools</a></li>
+                    <li class="breadcrumb-separator">&gt;</li>
+                    <li class="breadcrumb-item active" aria-current="page">Text Case Converter Online Free</li>
                 </ol>
             </nav>
         </div>
-        <section class="hero" style="padding-bottom: 2rem;">
+        <section class="hero">
             <div class="container">
                 <h1>Free Text Case Converter Online</h1>
                 <p>Instantly transform your text between UPPERCASE, lowercase, camelCase, snake_case, and more.</p>
@@ -137,7 +137,7 @@
             <div class="container">
                 <div class="tool-container" style="max-width: 900px; margin: 2rem auto;">
                     
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <label for="textInput">Enter your text</label>
                         <textarea id="textInput" class="input-field" rows="6" placeholder="Type or paste your text here to see it convert instantly..."></textarea>
                     </div>
@@ -152,7 +152,7 @@
                         <button class="btn btn-outline case-btn" data-case="kebab">kebab-case</button>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
                             <label for="textOutput" style="margin-bottom: 0;">Result</label>
                             <button id="copyBtn" class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; min-height: 32px; border-radius: 8px;">Copy</button>
@@ -168,7 +168,7 @@
 
         <div class="container"><div class="ad-slot">Ad Space</div></div>
         
-        <section class="article-section">
+        <section class="article-section" style="padding: var(--space-mobile-lg) 0;">
             <div class="container">
                 <h2>Understanding Text Cases for Developers and Writers</h2>
                 <div class="article-content">
@@ -196,7 +196,7 @@
             </div>
         </section>
     
-        <section class="related-tools-section" style="background-color: var(--card-bg); padding: 3rem 0; margin-top: 3rem; border-top: 1px solid var(--border-color);">
+        <section class="related-tools-section" style="background-color: var(--card-bg); padding: var(--space-mobile-lg) 0; margin-top: var(--space-mobile-lg); border-top: 1px solid var(--border-color);">
             <div class="container">
                 <h2 style="text-align: center; margin-bottom: 2rem;">You Might Also Like</h2>
                 <div class="grid tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">

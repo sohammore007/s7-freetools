@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currencySelector.addEventListener('change', () => {
             currentSymbol = currencySelector.value;
             localStorage.setItem('preferredCurrencySymbol', currentSymbol);
-            calculate();
+            if (resultsSection.style.display === 'block') calculate();
         });
     }
 
@@ -43,22 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsSection.style.display = 'block';
     }
     
-    principalInput.addEventListener('input', calculate);
-    rateInput.addEventListener('input', calculate);
-    timeInput.addEventListener('input', calculate);
     calculateBtn.addEventListener('click', calculate);
-    
-    // Call calculate on load to process any browser-restored input values and the saved currency symbol
-    calculate();
     
     copyResultBtn.addEventListener('click', () => {
         const textToCopy = `Principal: ${currentSymbol}${principalInput.value} | Rate: ${rateInput.value}% | Time: ${timeInput.value} Years | Interest: ${resInterest.textContent} | Total: ${resTotal.textContent}`;
         navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalText = copyResultBtn.textContent;
-            copyResultBtn.textContent = 'Copied!';
-            setTimeout(() => copyResultBtn.textContent = originalText, 2000);
+            const originalHTML = copyResultBtn.innerHTML;
+            copyResultBtn.innerHTML = '<span style="font-size:0.8rem; font-weight:bold; color:var(--primary-color);">Copied!</span>';
+            setTimeout(() => copyResultBtn.innerHTML = originalHTML, 2000);
         }).catch(err => {
-            alert('Failed to copy.');
+            if (typeof showToast === 'function') showToast('Failed to copy', 'error');
+            else alert('Failed to copy.');
         });
     });
 });

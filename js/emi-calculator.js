@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Formatter for currency
     const formatCurrency = (amount) => {
-        return Number(amount).toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+        return '₹' + Number(amount).toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
     };
 
     calculateBtn.addEventListener('click', () => {
